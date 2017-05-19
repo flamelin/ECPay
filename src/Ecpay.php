@@ -8,13 +8,13 @@ class Ecpay
 {
 
     private $instance = null;
-
+    private $logistics_instance = null;
     //--------------------------------------------------------
 
     public function __construct()
     {
         $this->instance = new EcpayFactory();
-
+        $this->logistics_instance = new EcpayLogisticsFactory();
         // env('APP_PAY_TEST')? $this->setForTest(): $this->setForProd();
 
     }
@@ -27,6 +27,11 @@ class Ecpay
     public function i()
     {
         return $this->instance;
+    }
+
+    public function il()
+    {
+      return $this->logistics_instance;
     }
 
     private function setForTest()
