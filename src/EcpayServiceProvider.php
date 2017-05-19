@@ -39,8 +39,8 @@ class EcpayServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/Views', 'ecpay');
 
         //Facade => Custom Class
-        $this->app['ecpay'] = $this->app->share(function ($app) {
-            return new Ecpay;
+        $this->app->singleton('ecpay' , function ($app) {
+           return new Ecpay;
         });
 
     }
