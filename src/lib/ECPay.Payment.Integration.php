@@ -1642,7 +1642,3 @@ class ECPay_CheckMacValue{
     }
 
 }
-
-
-?>
-
